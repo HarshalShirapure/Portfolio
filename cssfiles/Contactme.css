@@ -1,0 +1,233 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+/* Navbar Styles */
+nav {
+    background-color: black;
+    position: sticky;
+    top: 0;
+    z-index: 1001;
+}
+
+/* Menu Toggle Button */
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    color: white;
+    padding: 15px 20px;
+    cursor: pointer;
+}
+
+/* Navbar List Items */
+.listitem {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    padding: 20px;
+    font-size: 20px;
+    justify-content: flex-end;
+}
+
+.listitem li a {
+    color: wheat;
+    text-decoration: none;
+}
+
+li:hover a {
+    text-decoration: underline;
+    text-decoration-color: white;
+}
+
+/* Projects Section */
+.projects-section {
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.project-card {
+    background-color: wheat;
+    padding: 20px;
+    border-radius: 15px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.project-title {
+    text-align: center;
+    font-size: 32px;
+    margin-top: 20px;
+}
+
+/* Contact Form Layout */
+.contact {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-col {
+    height: 500px;
+    background-color: wheat;
+    padding: 20px;
+    line-height: 50px;
+    border: 1px solid black;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+label {
+    font-size: 20px;
+    padding-bottom: 20px;
+}
+
+input, textarea {
+    height: 30px;
+    width: 600px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.btn {
+    height: 35px;
+    width: 150px;
+    border-radius: 20px;
+    border-style: none;
+    background-color: rgb(8, 52, 227);
+    color: white;
+    cursor: pointer;
+    margin-left: 200px;
+}
+
+.heading-contact {
+    text-align: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    /* Show menu toggle button for small screens */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Adjust Navbar Items for small screens */
+    .listitem {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        background-color: rgba(0, 0, 0, 0.95);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 250px;
+        height: 100%;
+        padding-top: 60px;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 1000;
+        overflow-y: auto;
+    }
+
+    .listitem.active {
+        transform: translateX(0);
+    }
+
+    /* Navbar Links */
+    .listitem li {
+        width: 100%;
+        padding: 15px 20px;
+    }
+
+    .listitem li a {
+        display: block;
+        color: white;
+        font-size: 18px;
+    }
+
+    .listitem li:hover {
+        background-color: #444;
+    }
+
+    /* Projects Section (Responsive) */
+    .projects-section {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .project-card {
+        width: 100%;
+        max-width: 95%;
+    }
+
+    .project-title {
+        font-size: 26px;
+    }
+
+    /* Adjust Contact Form */
+    .contact-col {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+    }
+
+    input, textarea {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .btn {
+        width: 100%;
+        margin-left: 0;
+        height: 35px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further adjust for smaller screens */
+    .listitem {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .contact-col {
+        width: 95%; /* Make the contact form take up almost full width */
+        padding: 15px;
+    }
+
+    label {
+        font-size: 16px;
+    }
+
+    input, textarea {
+        font-size: 14px;
+        height: 35px;
+    }
+
+    .btn {
+        font-size: 16px;
+        height: 40px;
+    }
+
+    .heading-contact {
+        font-size: 18px;
+    }
+}
